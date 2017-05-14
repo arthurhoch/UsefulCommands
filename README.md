@@ -13,7 +13,7 @@ __$ find -name "* *" -type d | rename 's/ /_/g'__
 __$ find -name "* *" -type f | rename 's/ /_/g'__
 
 - Or
-__for f in *\ *; do mv "$f" "${f// /_}"; done__
+__$ for f in *\ *; do mv "$f" "${f// /_}"; done__
 
 ## FFMPEG
 
