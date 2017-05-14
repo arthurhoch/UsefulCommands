@@ -4,12 +4,12 @@
 
 ### About file/dir names
 
-- Remove directory namespaces:
+- Remove spaces in filenames:
 
+- Directories:
 __$ find -name "* *" -type d | rename 's/ /_/g'__
 
--  Remove files namespaces:
-
+- Files
 __$ find -name "* *" -type f | rename 's/ /_/g'__
 
 ## FFMPEG
