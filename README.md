@@ -1,16 +1,16 @@
 # UsefulCommands
 
-## Find
+## FIND
 
 ### About file/dir names
 
 - Remove directory namespaces:
 
-$ find -name "* *" -type d | rename 's/ /_/g'
+**$ find -name "* *" -type d | rename 's/ /_/g'**
 
 -  Remove files namespaces:
 
-$ find -name "* *" -type f | rename 's/ /_/g'
+  **$ find -name "* *" -type f | rename 's/ /_/g'**
 
 ## FFMPEG
 
