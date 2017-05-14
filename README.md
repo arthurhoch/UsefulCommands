@@ -12,6 +12,9 @@ __$ find -name "* *" -type d | rename 's/ /_/g'__
 - Files
 __$ find -name "* *" -type f | rename 's/ /_/g'__
 
+- Or
+__for f in *\ *; do mv "$f" "${f// /_}"; done__
+
 ## FFMPEG
 
 ### About H265
@@ -24,7 +27,7 @@ __ffmpeg -i org.mp4 -c:v libx265 -c:a aac -threads 8 modified.H265.AAC.mp4__
 
 __ffmpeg -i org.mp4 -c:v libx265 -c:a aac -threads 8 modified.H265.AAC.mkv__
 
-- Convert video (mp4||*) to video (H265/AAC/mp4) // A little more than the previous one
+- Convert video (mp4||*) to video (H265/AAC/MP4) // A little more than the previous one
 
 __ffmpeg -i org.mp4 -c:v libx265 -c:a aac -threads 8 modified.H265.AAC.mp4__
 
