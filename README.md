@@ -34,3 +34,21 @@ __ffmpeg -i org.mp4 -c:v libx265 -c:a aac -threads 8 modified.H265.AAC.mp4__
 - Convert video (mp4||*) to video (H265/AAC/MP4||MKV/FILM) 
 
 __ffmpeg -i org.mp4 -c:v libx265 -tune filme -c:a aac -threads 8 modified.H265.AAC.mp4__
+
+
+## Debian / Ubuntu
+
+### Create a packet (Ex: squid)
+
+apt-get source squid
+apt-get build-dep squid
+apt-get install devscripts build-essential fakeroot
+cd squid-(TAB)
+vim debian/rules
+Add --with-openssl \
+    --enable-ssl-crtd \ 
+In
+./configure
+debuild -us -uc -b
+cd ..
+dpkg -i squid*
