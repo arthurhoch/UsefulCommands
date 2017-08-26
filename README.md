@@ -2,6 +2,16 @@
 
 ## FIND
 
+### tar.xz
+
+- Remove spaces in filenames:
+
+- C
+__$ tar cf - dir | xz -e > dir.tar.xz
+
+- X
+__$ tar xf  dir.tar.xz
+
 ### About file/dir names
 
 - Remove spaces in filenames:
