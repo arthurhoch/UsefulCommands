@@ -6,11 +6,14 @@
 
 - Remove spaces in filenames:
 
-- C
+- C:
 __$ tar cf - dir | xz -e > dir.tar.xz
 
-- X
+- X:
 __$ tar xf  dir.tar.xz
+
+- T:
+__$ xz -t backup.xz
 
 ### About file/dir names
 
