@@ -2,6 +2,8 @@
 
 ## FIND
 
+find ./ -exec touch -t 201711020000 {} \;
+
 ### tar.xz
 
 - Remove spaces in filenames:
