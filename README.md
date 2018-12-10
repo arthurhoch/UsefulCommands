@@ -50,6 +50,9 @@ __ffmpeg -i org.mp4 -c:v libx265 -c:a aac -threads 8 modified.H265.AAC.mp4__
 
 __ffmpeg -i org.mp4 -c:v libx265 -tune filme -c:a aac -threads 8 modified.H265.AAC.mp4__
 
+__ffmpeg -i input.mp4 -s hd480 -c:v libx264 -crf 23 -c:a aac -strict -2 output.mp4__
+
+
 
 ## Debian / Ubuntu
 
