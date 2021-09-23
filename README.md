@@ -70,3 +70,31 @@ In
 debuild -us -uc -b
 cd ..
 dpkg -i squid*
+
+
+
+
+
+CREATE OR REPLACE FUNCTION db_to_csv(path TEXT) RETURNS void AS $$
+declare
+   tables RECORD;
+   statement TEXT;
+begin
+FOR tables IN 
+   SELECT (table_name) AS schema_table
+   FROM information_schema.tables t INNER JOIN information_schema.schemata s 
+   ON s.schema_name = t.table_schema 
+   WHERE t.table_schema NOT IN ('pg_catalog', 'information_schema')
+   AND t.table_type NOT IN ('VIEW')
+   ORDER BY schema_table
+LOOP
+   statement := 'COPY "' || tables.schema_table || '" TO ''' || path || '\' || tables.schema_table || '.csv' ||''' DELIMITER '';'' CSV HEADER';
+   EXECUTE statement;
+END LOOP;
+return;  
+end;
+$$ LANGUAGE plpgsql;
+
+SELECT db_to_csv('C:\Program Files\PostgreSQL\9.5\data');
+
+
